@@ -45,8 +45,7 @@ func query(city string) (weatherData, error) {
 
 	var d weatherData
 
-	dec := json.NewDecoder(resp.Body)
-	if err := dec.Decode(&d); err != nil {
+	if err := json.NewDecoder(resp.Body).Decode(&d); err != nil {
 		return weatherData{}, err
 	}
 	return d, nil
