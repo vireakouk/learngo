@@ -4,9 +4,11 @@ import (
 	"encoding/json"
 	"net/http"
 	"strings"
+
+	"github.com/vireakouk/learngo/config"
 )
 
-const apiKey = "04f16be0efe531bd5bad74fcfaa01a74"
+const apiKey = config.APIKEY
 
 func main() {
 	http.HandleFunc("/hello", helloWorld)
